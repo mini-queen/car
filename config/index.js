@@ -1,3 +1,5 @@
+const path = require('path') // eslint-disable-line
+
 const config = {
   projectName: 'car',
   date: '2020-4-5',
@@ -87,6 +89,18 @@ const config = {
       }
     },
     esnextModules: ['taro-ui']
+  },
+  sass: {
+    resource: [
+      'src/styles/variable.scss',
+      'src/styles/mixins.scss',
+      'src/styles/icon.scss',
+      'src/styles/common.scss'
+    ],
+    projectDirectory: path.resolve(__dirname, '..')
+  },
+  alias: {
+    '@/utils': path.resolve(__dirname, '..', 'src/utils')
   }
 }
 

@@ -30,7 +30,7 @@ class Home extends Component {
     return (
       <View className='home'>
         <Text>{text}</Text>
-        <Button onClick={this.goLogin}>登录</Button>
+        <Button onClick={this.goLogin}>去登录</Button>
       </View>
     )
   }

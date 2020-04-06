@@ -1,4 +1,14 @@
 .login {
-  text-align: center;
-  margin-top: 100px;
+  color: $color-orange;
+  .btn-login {
+      width: 61.8%;
+      height: 90px;
+      line-height: 90px;
+      border-radius: 45px;
+      text-align: center;
+      color: $color-white;
+      font-size: $f16;
+      background-color: green;
+      margin: 600px auto 0;
+  }
 }

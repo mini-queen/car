@@ -40,8 +40,11 @@ class Index extends Component {
     }
   }
   handleClick = (current) => {
+    // Taro.setNavigationBarTitle({
+    //   title: this.props.textMap[current]
+    // })
     Taro.setNavigationBarTitle({
-      title: this.props.textMap[current]
+      title: ['首页','商城','洗车','我的'][current]
     })
     this.setState({
       current

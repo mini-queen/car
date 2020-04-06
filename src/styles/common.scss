@@ -1,0 +1,47 @@
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+  line-height: 0;
+  font-size: 0;
+  visibility: hidden;
+}
+.font-48 {
+  font-size: 48px;
+}
+//新
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-left {
+  display: flex;
+  align-items: center;
+}
+.center-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2
+}

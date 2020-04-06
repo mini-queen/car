@@ -1,0 +1,24 @@
+ @mixin font-bold() {
+  font-weight: bold;
+}
+ @mixin font-rest() {
+  font-weight: normal;
+}
+ @mixin font-0() {
+  font-size:0;
+}
+
+ @mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+ @mixin ellipsis-clamp( $num ) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
