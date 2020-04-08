@@ -33,6 +33,12 @@ class Index extends Component {
       3: '我的'
     }
   }
+  textMap = {
+    0: '首页',
+    1: '商城',
+    2: '洗车',
+    3: '我的'
+  }
   constructor () {
     super(...arguments)
     this.state = {
@@ -44,7 +50,7 @@ class Index extends Component {
     //   title: this.props.textMap[current]
     // })
     Taro.setNavigationBarTitle({
-      title: ['首页','商城','洗车','我的'][current]
+      title: this.textMap[current]
     })
     this.setState({
       current

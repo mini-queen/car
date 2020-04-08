@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { goLogin } from '@/utils/api'
+import { shaParams } from '@/utils'
+
 import './index.scss'
 
 class Login extends Component {
@@ -19,18 +21,24 @@ class Login extends Component {
     console.log('结果',result)
   }
   getInfo = (e) => {
+    
     if (e.target.userInfo) {
       const userInfo = e.target.userInfo
       wx.login({
         success: async (login) => {
         // 调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户的唯一标识（openid）
         // https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html
+          
           let data = {
-            currentUser: userInfo,
-            code: login.code
+            wxName: userInfo.nickName,
+            jscode: login.code
           }
+          let ret = shaParams(data)
           console.log(userInfo,login.code)
-          let result = await goLogin()
+          let result = await goLogin({
+            ...data,
+            sign: ret
+          })
           console.log('结果',result)
           // console.log('返回结果', res.result.token)
           // // 存储后端token
