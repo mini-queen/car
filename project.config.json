@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "car",
   "description": "this is a mini project for car",
-  "appid": "touristappid",
+  "appid": "wxcf7caffd558873a5",
   "setting": {
     "urlCheck": true,
     "es6": false,
