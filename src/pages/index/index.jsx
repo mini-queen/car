@@ -75,10 +75,10 @@ class Index extends Component {
 
   render () {
     const items = [
-      { title: '首页', iconType: 'home' },
-      { title: '商城', iconType: 'shopping-cart' },
-      { title: '洗车', iconType: 'money' },
-      { title: '我的', iconType: 'user' }
+      { title: '首页', iconPrefixClass:'icon', iconType: 'home'},
+      { title: '商城', iconPrefixClass:'icon', iconType: 'shop'},
+      { title: '洗车', iconPrefixClass:'icon', iconType: 'car'},
+      { title: '我的', iconPrefixClass:'icon', iconType: 'me'}
     ]
 
     const { current } = this.state
@@ -93,6 +93,9 @@ class Index extends Component {
 
         {current == 0 ? <Home /> : current == 1 ? <Shop /> : current == 2 ? <Wash /> : <Me />}
         <AtTabBar
+          color={'#333'}
+          selectedColor={'#2E2B90'}
+          iconSize={24}
           fixed
           tabList={items}
           onClick={this.handleClick}

@@ -8,6 +8,6 @@ export async function getIndexGoods (params) {
 }
 
 export async function goLogin (params) {
-  let result = await fetch('user/login', params, 'post')
+  let result = await fetch('login', params, 'post')
   return result
 }

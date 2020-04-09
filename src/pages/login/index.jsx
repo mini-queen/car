@@ -1,9 +1,17 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
+import { connect } from '@tarojs/redux'
 import { goLogin } from '@/utils/api'
 import { shaParams } from '@/utils'
+import { setUserInfo } from '@/actions/user';
 
 import './index.scss'
+
+@connect(({ user }) => ({
+  userInfo: user
+}), {
+  setUserInfo
+})
 
 class Login extends Component {
   constructor () {
@@ -34,7 +42,9 @@ class Login extends Component {
             jscode: login.code
           }
           let ret = shaParams(data)
+
           console.log(userInfo,login.code)
+          this.props.setUserInfo(userInfo)
           let result = await goLogin({
             ...data,
             sign: ret

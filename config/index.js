@@ -100,7 +100,8 @@ const config = {
     projectDirectory: path.resolve(__dirname, '..')
   },
   alias: {
-    '@/utils': path.resolve(__dirname, '..', 'src/utils')
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/actions': path.resolve(__dirname, '..', 'src/actions')
   }
 }
 

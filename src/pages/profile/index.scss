@@ -1,0 +1,49 @@
+.profile {
+  background-color: $color-bg;
+  height: 100vh;
+  .sections {
+    width: 700px;
+    margin: 20px auto 0;
+    background-color: $color-white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    .section {
+      height: 100px;
+      // margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:last-of-type {
+        margin-bottom: none;
+      }
+      .tip {
+        color: $grey;
+        font-size: 28px;
+      }
+      .right-info {
+        color: $primary;
+        font-size: 28px;
+        .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+        .text {
+          &.right {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+  }
+  .btn-logout {
+    &.at-button {
+      width: 90%;
+      position: fixed;
+      bottom: 40px;
+      left: 5%;
+    }
+  }
+}

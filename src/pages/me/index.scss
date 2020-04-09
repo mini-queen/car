@@ -1,4 +1,95 @@
 .me {
-  text-align: center;
-  margin-top: 100px;
+  background-color: $color-bg;
+  height: 100vh;
+  .me-top {
+    width: 750px;
+    height: 348px;
+    position: relative;
+    background-color: $main;
+    .user-info {
+      position: absolute;
+      top: 138px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+      }
+      .name {
+        margin-left: 30px;
+        margin-right: 18px;
+        font-size: 40px;
+        color: $color-white;
+      }
+      
+    }
+    
+  }
+  .me-middle {
+    width:690px;
+    // height:282px;
+    background: $color-white;
+    border-radius:19px;
+    position: relative;
+    top: -40px;
+    left: 30px;
+    .banners {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      .line {
+        width: 2px;
+        height: 50px;
+        background-color: $line;
+      }
+      .banner {
+        width: calc(50% - 1px);
+        box-sizing: border-box;
+        text-align: center;
+        .banner-top {
+          .banner-val {
+            font-size: 40px;
+            color: $main;
+          }
+          .banner-unit {
+            font-size: 24px;
+            color: $disabled;
+            margin-left: 10px;
+          }
+        }
+        .banner-tip {
+          font-size: 28px;
+          color: $primary;
+        }
+      }
+    }
+  }
+  .me-bottom {
+    background: $color-white;
+    border-radius:19px;
+    width: 690px;
+    margin: 0px auto 0;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        .text {
+          margin-left: 20px;
+          color: $primary;
+          font-size: 28px;
+        }
+      }
+    }
+  }
 }
