@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
+import { shaParams } from '@/utils'
 
+const whiteList = ['login']
 let Fly = require('flyio/dist/npm/wx') // eslint-disable-line
 let request = new Fly()
 request.config.timeout = 15 * 1000
@@ -7,9 +9,11 @@ request.config.baseURL = 'http://39.101.197.57:9001/api'
 request.interceptors.request.use((req) => {
   req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
   // req.headers['Content-Type'] = 'application/json'
-  // req.headers['sign'] = 'bba3323921709ed27e2fdb459ca65b70'
-  // req.headers['X-SZK-Channel'] = 'small'
-  // req.headers['X-SZK-Token'] = Taro.getStorageSync('DIAN_TOKEN')
+  if(!whiteList.includes(req.url)) {
+    req.body.token = Taro.getStorageSync('token')
+  }
+  req.body.sign = shaParams(req.body) // 参数加密
+
   Taro.showLoading({ title: '加载中..' })
   return req
 })
@@ -31,10 +35,23 @@ request.interceptors.response.use(
   }
 )
 
+function checkStatus (response) {
+  if (response.code == '200') {
+    return response.data
+  } else {
+    Taro.showToast({
+      title: response.message,
+      icon: 'none',
+      duration: 2000
+    })
+    throw new Error(response.message)
+  }
+}
 
 export default function fetch (url, params = {}, method = 'post') {
   return new Promise((resolve, reject) => {
     request[method](url, params)
+      .then(checkStatus)
       .then(response => {
         resolve(response)
       })

@@ -1,8 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Image, Text } from '@tarojs/components'
+import { connect } from '@tarojs/redux'
 import { AtIcon, AtButton } from 'taro-ui'
 import sections from './config'
 import './index.scss'
+
+@connect(state=>state.user)
 
 class Profile extends Component {
   constructor () {
@@ -11,7 +14,10 @@ class Profile extends Component {
       text: '个人资料'
     }
   }
-
+  genderMap = {
+    0: '女',
+    1: '男'
+  }
   logout = () => {
     console.log('登出')
   }
@@ -24,15 +30,33 @@ class Profile extends Component {
     console.log(this.props, nextProps)
   }
 
-  componentWillUnmount () { }
+  componentWillUnmount () { 
+    
+  }
 
-  componentDidShow () { }
+  componentDidShow () {
+
+  }
 
   componentDidHide () { }
 
   render () {
     
-    const { text } = this.state
+    const { userInfo } = this.props
+    sections.forEach(item => {
+      if( item.key === 'avatar') {
+        item.imgUrl = userInfo.avatarUrl || item.imgUrl 
+      }
+      if(item.key === 'name') {
+        item.info = userInfo.nickName || item.info
+      }
+      if(item.key === 'gender') {
+        item.info = this.genderMap[userInfo.gender] || item.info
+      }
+      if(item.key === 'tel') {
+        item.info = userInfo.tel || item.info
+      }
+    })
     return (
       <View className='profile'>
         <View className='sections'>
@@ -45,7 +69,7 @@ class Profile extends Component {
                     {
                       item.isImg && 
                       <Image className='avatar'
-                        src={item.imgUrl || 'https://www.fendi.cn/dist/img/loading_bg.3d417d5d.jpg'}
+                        src={item.imgUrl}
                       />
                     }
                     {

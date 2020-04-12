@@ -11,3 +11,13 @@ export async function goLogin (params) {
   let result = await fetch('login', params, 'post')
   return result
 }
+
+export async function sendMsg (params) {
+  let result = await fetch('sms/sendAuthPhoneCode', params, 'post')
+  return result
+}
+
+export async function complementUserInfo (params) {
+  let result = await fetch('user/complementUserInfo ', params, 'post')
+  return result
+}

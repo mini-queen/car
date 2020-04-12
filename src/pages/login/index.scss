@@ -11,4 +11,17 @@
       background-color: green;
       margin: 600px auto 0;
   }
+  .input-profile {
+    &.at-input {
+      background-color: $color-white;
+      
+    }
+  }
+  .countdown {
+    color: $error;
+    font-size: 28px;
+  }
+  .sendcode {
+    font-size: 28px;
+  }
 }

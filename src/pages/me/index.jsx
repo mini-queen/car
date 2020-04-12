@@ -32,7 +32,6 @@ class Me extends Component {
   render () {
     const { text } = this.state
     const { userInfo } = this.props 
-    console.log(123,userInfo)
     let navs = [
       {text: '栏目1',id:'1'},
       {text: '栏目2',id:'2'},
