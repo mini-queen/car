@@ -1,4 +1,123 @@
 .wash {
-  text-align: center;
-  margin-top: 100px;
+  background-color: $color-bg;
+  height: 100vh;
+  .car-items {
+    .car-item {
+      background-color: $color-white;
+      margin-bottom: 20px;
+      padding: 40px 30px 20px;
+      &_top {
+        display: flex;
+        align-items: center;
+        .avatar {
+          width: 130px;
+          height: 130px;
+        }
+        .car-info {
+          margin-left: 20px;
+          flex: 1;
+          .car-title {
+            font-size: 32px;
+            color: $primary;
+          }
+          .info-mid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .mid-left {
+              .star {
+                color: $grey;
+                font-size: 20px;
+                display: inline-block;
+              }
+              .count {
+                color: $grey;
+                font-size: 20px;
+                margin-left: 18px;
+                display: inline-block;
+              }
+              .text {
+                margin-left: 8px;
+                color: $error;
+              }
+            }
+            
+            .tag {
+              width: 60px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              font-size: 16px;
+              border: solid 1px $disabled;
+              color: $disabled;
+            }
+          }
+          .car-addr {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+            .addr {
+              color: $grey;
+              font-size: 20px;
+            }
+            .distance {
+              color: $grey;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      &_bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: solid 1px $line;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .bottom-left {
+        
+          .bottom-tip {
+            font-size: 22px;
+            color: $primary;
+          }
+          .bottom-sale {
+            font-size: 20px;
+            color: $grey;
+            margin-top: 12px;
+            .sale {
+              margin-left: 8px;
+            }
+          }
+        }
+        .bottom-right {
+          display: flex;
+          align-items: center;
+          .right-price {
+            margin-right: 20px;
+            text-align: right;
+            .origin-price {
+              font-size: 32px;
+              color: $error;
+            }
+            .cut-price {
+              font-size: 20px;
+              color: $grey;
+              text-decoration: line-through;
+            }
+          }
+          .buy {
+            width: 70px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 15px;
+            border: solid 2px $error;
+            font-size: 24px;
+            color: $error;
+          }
+        }
+      }
+    }
+  }
 }

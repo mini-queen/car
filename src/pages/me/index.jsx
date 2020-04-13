@@ -33,10 +33,10 @@ class Me extends Component {
     const { text } = this.state
     const { userInfo } = this.props 
     let navs = [
-      {text: '栏目1',id:'1'},
-      {text: '栏目2',id:'2'},
-      {text: '栏目3',id:'3'},
-      {text: '栏目4',id:'4'}
+      {text: '待支付',id:'1'},
+      {text: '待收货',id:'2'},
+      {text: '待评价',id:'3'},
+      {text: '待退货',id:'4'}
     ]
     let banners = [
       {
